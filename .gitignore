@@ -27,6 +27,16 @@ migrations/init.py
 backend/static/ 
 backend/media/
 
+
+ # Next.js
+ frontend/.next/
+ frontend/out/
+ frontend/node_modules/
+ frontend/.env.local
+ frontend/.env.development.local
+ frontend/.env.test.local
+ frontend/.env.production.local
+
 *.DS_Store 
 *.swp 
 *~
