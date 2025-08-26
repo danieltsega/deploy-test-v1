@@ -1,7 +1,12 @@
-# core/api/views.py
-from rest_framework.views import APIView
-from rest_framework.response import Response
+# backend/core/api/views.py
+from rest_framework import generics
+from core.models import Todo
+from .serializers import TodoSerializer
 
-class HelloView(APIView):
-    def get(self, request):
-        return Response({"message": "Hello, World!"})
+class TodoListCreateView(generics.ListCreateAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
+
+class TodoDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
